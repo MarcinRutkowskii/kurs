@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Zajęcia 1_1</title>
+        <link rel="stylesheet" href="../1_zmienne/css/style.css">
+    </head>
+    <body>
+
+        <script>
+            var a = 10, b = "5a";
+            var wynik = a + b;
+            //alert(a+b);
+            console.log("test");
+            console.log(typeof(a)); //number
+            console.log(typeof(b)); //string
+            console.log(typeof(wynik)); //string
+
+            console.trace();
+
+            var _zmienna1 = 10;
+            console.log(_zmienna1);
+            //console.log(_Zmienna1); // błąd zmienna niezdefiniowana
+
+            var zmiennoprzecinkowa = 2.5;
+            console.log(zmiennoprzecinkowa);
+            console.log(typeof(zmiennoprzecinkowa)); //number
+
+//bool
+            var prawda = true;
+            console.log(typeof(prawda)); //boolean
+
+//string
+            var tekst = "Janusz";
+            console.log(typeof(tekst)); //string
+
+            var inna;
+            console.log(typeof(inna)); //undefined
+
+            var tab = ["jeden", "dwa"];
+            console.log(tab);
+            console.log(typeof(tab)); //object
+
+
+//#############################################################
+
+
+            //var liczba = prompt("Podaj liczbę");
+            var liczba = prompt("Podaj liczbę","np.3");
+            console.log(typeof(liczba)); //string
+            liczba = parseInt(liczba);
+            console.log(typeof(liczba)); //number
+            document.write("Wprowadziłeś wartość: " + liczba);
+
+//zad. dom. obliczpole prostokąta,  użytkownik podaje dane z
+            //klawiatury
+
+
+        </script>
+    </body>
+</html>
