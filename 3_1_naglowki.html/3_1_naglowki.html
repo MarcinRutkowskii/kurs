@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Nagłówek</title>
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+<body>
+    <h1>Nasza oferta</h1>
+    <script>
+        document.write('<h2> Witaj Janusz </h2>');
+        //document- nasz obiekt
+        //. - operator elementu składowego
+        //write('<h2> Witaj Janusz </h2>') - metoda
+        //'<h2> Witaj Janusz </h2>' - parametr
+
+    </script>
+    <h1>Systemy liczbowe</h1>
+    <div id="wynik"></div>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+    <script>                                                            //divy (bloki) muszą być przed skryptami
+        var dziesietna = 15; //liczba w systemie dziesiętnym
+        var oktalna = 017;//oktalna
+        var hex= 0xA2; // zapis liczy heksadecymalnej
+        document.write(oktalna); //15
+        document.write("<br>"+hex); //162
+
+//zadanie 1 uzytkownik podaje liczbe 16tkowa z klawiatury , zamien ja  i wyswietl w systemi dziesietnym
+
+        var liczba = prompt("podaj liczbę w systemie szesnastkowym");
+        document.write("liczba w systemie szesnastkowym wynosi: ")+liczba;
+        var x = "0x"+liczba;
+        console.log(typeof(x)); //string
+        x = parseInt(x);
+        console.log(typeof(x));
+        document.write("<br>po konwersji wynosi: " +x+"<br>");
+        document.write("("+liczba+")"+"<sub>16</sub> = ("+x+") <sub>10</sub> <br>");
+
+        document.write("y=x<sup>2</sup>-4ac <br>");
+//zadanie 2
+        /* uzytkownik podaje z klawiatury podstawe i wysokosc trojkata. //moze byc na egzaminie
+        oblicz i wyswietl ile wynosi pole
+        */
+        var blok = document.getElementById("wynik");
+        blok.style.color = "green";
+        var podstawa = prompt(" podaj podstawę trójkąta");
+        var wysokość = prompt(" podaj wysokość trójkąta");
+        var pole;
+        pole = (podstawa*wysokość)/2;
+        //pole = 0,5*(podstawa*wysokość); //2 sposób
+        document.write("Pole trójkąta wynosi:" + pole + "cm<sup>2</sup>");
+        //blok.textContent = "Pole trójkąta wynosi:" + pole
+        //10cm<sup>2</sup>
+        blok.textContent = "Pole trójkąta wynosi:" + pole + "cm<sup>2</sup>";
+        blok.innerHTML = "Pole trójkąta wynosi:" + pole + "cm<sup>2</sup><br>";
+
+//zadanie 3
+        /* uzytkownik podaje z klawiatury swoj wiek (Janusz)
+        uzytkownik podaje z klawiatury swoj wiek (Agata)
+        oblicz średni wiek, wyswietl wynik w formacie "Średni wiek wynosi:" <wiek> "lat"
+        w nawiasach kwadratowych jest sam wynik zadania
+        sredni wiek wyswietl w kolorze czerwonym a pozostale dane w kolorze #FF07D2*/
+        var wiekJanusz = prompt("podaj swój wiek Janusz");
+        wiekJanusz = parseFloat(wiekJanusz);
+        var wiekAgata = prompt("podaj swój wiek Agata");
+        wiekAgata = parseFloat(wiekAgata);
+        var średnia;
+        średnia = (wiekJanusz+wiekAgata)/2;
+        document.write("<br>Średni wiek wynosi:" + średnia);
+        a = document.getElementById("a");
+        b = document.getElementById("b");
+        c = document.getElementById("c");
+        a.style.color = "#FF07D2";
+        b.style.color = "red";
+        c.style.color = "#FF07D2";
+        a.innerHTML = "Średni wiek wynosi";
+        b.innerHTML = średnia;
+        c.innerHTML = "lat";
+
+
+    </script>
+</body>
+
+
+
+
+
+
+</html>
