@@ -82,6 +82,36 @@
         b.innerHTML = średnia;
         c.innerHTML = "lat";
 
+ //*********************************************************
+        //konkatenacja + javascript do połączenia dwóch stringów sluzy +
+        //konkatenacja . w PHP a tu .
+        var x = prompt("Podaj x"); //2 //2.5
+        var y = prompt("Podaj y"); //3 //3
+        var z = x + y;          //string nie sumuje a jednie łączy obie liczby, po to jest "parse"
+        console.log(z); //23
+
+        /* x= parseInt(x);
+        y= parseInt(y);
+        z= x + y;
+        console.log(z); //5 //5 */
+
+        x = parseFloat(x);
+        y = parseFloat(y);
+
+        z = x + y;
+        console.log(z);
+  //*********************************************************
+
+        var tekst = parseFloat(prompt ("Podaj wiek"));
+        document.write(teskt);
+        //po podaniu wartości "janusz" wyświetla sie NaN (not a number)
+
+        if(typeof(tekst) == 'NaN') {
+            document.write("podałeś błędne dane");
+        }else{
+            document.write("twój wiek" + tekst);
+        }
+
 
     </script>
 </body>
