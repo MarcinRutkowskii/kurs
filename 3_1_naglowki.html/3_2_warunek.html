@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Nagłówek</title>
+</head>
+<body>
+    <script>
+var block = document.getElementById("Wynik");
+var r = prompt("Podaj promień");
+var pi;
+var pole;
+pi = 3.14;
+pole = r * r * pi;
+document.write("Pole koła wynosi: " + pole);
+var obwód;
+obwod = 2 * pi * r;
+document.write("<br>Obwód koła wynosi: " + obwod);
+
+//************************************************************
+
+var tekst = parseFloat(prompt ("Podaj wiek"));
+document.write(tekst);
+if(typeof(tekst) == '>17') {
+    document.write("jesteś pełnoletni");
+}else{
+    document.write("twój wiek" + tekst);
+}
+
+//**************************************************************
+
+var tekst = parseFloat(prompt ("Podaj liczbę x"));
+        document.write(tekst);
+        //po podaniu wartości "janusz" wyświetla sie NaN (not a number)
+
+        if(typeof(tekst) == 'NaN') {
+            document.write("To nie jest liczba");
+        }else{
+            document.write("Liczba" + tekst);
+        }
+
+
+    </script>
+
+</body>
+
+
+</html>
