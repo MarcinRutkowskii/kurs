@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <title>Proste działania</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<div id="baner">
+    <a href="index.html"><img src="baner.jpg"></a>
+    </div>
+    <div id="menu">
+    Menu<br>
+        -<a href="strona1.html">Proste działania</a><br>
+        -<a href="strona2.html">Potęgowanie</a>
+
+    </div>
+    <div id="tresc">
+    <h1>PROSTE DZIAŁANIA</h1>
+    <form>
+    Podaj pierwszą liczbę:<input type="number" id="pierwsza"><br><br>
+    </form>
+    <form>
+    Podaj drugą liczbę:<input type="number" id="druga"><br><br>
+    </form>
+    <button id="dodawanie">DODAWANIE</button>&nbsp;&nbsp;
+    <button id="odejmowanie">ODEJMOWANIE</button>&nbsp;&nbsp;
+    <button id="mnozenie">MNOŻENIE</button>&nbsp;&nbsp;
+    <button id="dzielenie">DZIELENIE</button>&nbsp;&nbsp;<br><br>
+        <div id="komunikat"></div>
+    </div>
+    <script>
+        var elPierwsza = document.getElementById('pierwsza');
+        var elDruga = document.getElementById('druga');
+        var elDodawanie = document.getElementById('dodawanie');
+        var elOdejmowanie = document.getElementById('odejmowanie');
+        var elMnozenie = document.getElementById('mnozenie');
+        var elDzielenie = document.getElementById('dzielenie');
+        var elKomunikat = document.getElementById('komunikat');
+        var dlugosc1;
+        var dlugosc2;
+        var wartosc1;
+        var wartosc2;
+        
+        elDodawanie.onclick = function(){
+            /*var x = elPierwsza.value;
+            var dlugosc = x.length; podaje ilosc cyfr dlugosc wyrazenia
+            console.log(x);
+            console.log(dlugosc);*/
+            wartosc1 = elPierwsza.value;
+            dlugosc1 = wartosc1.length;
+            //== to porownanie, a === to porownanie typu danych
+            if(dlugosc1 == 0){
+                elKomunikat.innerHTML = 'Proszę uzupełnić obie liczby';
+            }else{
+                elKomunikat.innerHTML = '';
+            }
+        }
+    </script>
+    
+</body>
+</html>
