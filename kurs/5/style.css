@@ -1,0 +1,15 @@
+body{
+    background-color: navajowhite;
+    width: 100%;
+}
+#wynik{
+    width: 20%;
+    text-align: :right;
+    float: left;
+}
+#wynikKolor{
+    width: 20%;
+    text-align: left;
+    float: left;
+
+}
