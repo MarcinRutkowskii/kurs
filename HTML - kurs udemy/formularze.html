@@ -12,7 +12,39 @@
         <meta name="keywords" content="video kurs, video kursy, video, kurs" />
     </head>
     <body style="background-color: rgb(255,235,205)">
-       
+       <form action="mailto:Raven1590@interia.pl?subject=Ankieta" method="post" enctype="text/plain" accept-charset="utf-8"> <!--do formularzy najlepiej znać PHP i JS, bo tak to mozna tylko pisac maile, enctype to skrot od encyption type czyli sposob kodowania, jezeli nie uzywaa sie transitionala trzeba uzyc divy w formularzu -->
+          Imię: <input type="text" name="imie" value="wartosc domyslna" size="10" maxlength="10" readonly="1" disable="true"/> <!-- pod name imie bedzie znajdowala sie wartosc jaka uzytkownik wysle, read only jesli komus cos wysylam formularzem warto tak zablokowac mozliwosc wpisywania, label-etykieta, fieldset to pole, legenda to opis do danych linijek, multiple - wiecej do wyboru, input type file - wysylanie plikow(trzeba do tego php-->
+           Hasło: <input type="password" value="Wyślij" /> 
+                <input type="submit" value="Wyślij" /><br>
+                <fieldset>
+                <legend> Jakie jest Twoje hobby? </legend>
+                <input type="checkbox" name="hobby" value="zuzel" id="zuzel"/> <label for="zuzel">żużel</label>
+                <input type="checkbox" name="hobby" name="sport" id="sport"/> <label for="sport">sport</label>
+                </fieldset>
+                <br>
+                <fieldset><legend> Ile masz lat:</legend>
+                <input type="radio" name="kategoria_wiekowa" value="1-18" id="1"/><label for="1">1-18</label>
+                <input type="radio" name="kategoria_wiekowa" value="19-34" id="2"/><label for="2">19-34</label>
+                <input type="radio" name="kategoria_wiekowa" value="34+" id="3"/><label for="3">34+</label>
+                </fieldset>
+                <br>
+                <textarea columns="20" rows="20" disabled="disabled">Tresc nie do zmiany</textarea>
+                <select name="kolory" multiple="multiple">
+                    <option value="zolty">Zółty</option>
+                    <option value="zielony">Zielony</option>
+                    <option value="czerwony">Czerwony</option>
+                    <input type="submit" value="Wyślij" />
+                </select>
+           <input type="file" name="plik" /> <!-- enctype="multipart-form-data" gdyby wysylac ccos przez php-->
+           <input type="hidden" name="data"/> <!--zaawansowana rzecz przy php -->
+           <button type="submit">
+               <table>
+                   <tr><td>1</td><td>2</td></tr>
+                   <tr><td>3</td><td>4</td></tr>
+               </table>
+           </button>
+           
+       </form>
         
         
         
