@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pętle1</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="komunikat"></div>
+    <form>
+        <input type="password" id="pass1">Hasło1<br>
+        <input type="password" id="pass2">Hasło2<br>
+    </form>
+    <button id="przycisk">Zatwierdź</button>
+    <script>
+        function sprawdzHasla(){
+            haslo1 = document.getElementById("pass1");
+            haslo2 = document.getElementById("pass2");
+            var komunikat = document.getElementById("komunikat");
+            if(pass1.value!=pass2.value){
+                komunikat.style.color = "red";
+                 komunikat.innerHTML = "Hasłą są różne";
+           }else{
+                 komunikat.style.color = "green";
+                 komunikat.innerHTML = "Hasłą są poprawne";
+            }
+        }
+        var przycisk = document.getElementById("przycisk");
+        przycisk.addEventListener("click",sprawdzHasla);
+
+
+
+    </script>
+</body>
+</html>
