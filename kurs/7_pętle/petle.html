@@ -16,6 +16,9 @@
         //i++ preinkrementacja
         //<= mniejsze lub rowne
         //(i + " " - rozdzielenie spacjami
+
+
+        //pętle for
         for(var i=1; i<5; i++){
             document.write(i + " ");
             document.write("* ");
@@ -33,6 +36,7 @@
         for(var k=10; k>=4; k--){
             document.write(k + "<br>");
         }
+        document.write("<br>");
 
         //zad 3
         //wyświetl liczby parzyste z przedziału od <3,16>
@@ -108,6 +112,41 @@
         for(i=1; i<=10; i++){
             document.write(Math.floor(Math.random() * 151 + 50) + " ");
         }
+        document.write("<br>");
+//#############################################pętle while ############################
+
+        var i=0;
+        while(i++ < 5){
+            document.write(i + " ");
+        }
+        document.write("<br>");
+
+//zad 11 uzytkownik podaje z klawiatury 2 wartosci, petla bedzie wykonywała się tak dlugo dopoki x bedzie wieksze od y
+//        var x=1, y=0;
+//
+//        while(x>y){
+//            x = Number(prompt("Podaj x"));
+//            y = Number(prompt("Podaj y"));
+//        }
+//        document.write("x=" + x + ", y=" + y);
+// zad 12 uzytkownik jest pytany p haslo tak dlugo dopoki nie poda hasla "pomelo";
+
+//        var haslo, hasloPoprawne="pomelo";
+//        haslo = prompt("Podaj haslo");
+//        while(haslo!=hasloPoprawne ){
+//            haslo = prompt("Podaj haslo");
+//        }
+//        document.write("Zgadles haslo<br>");
+//##############################pętla DO WHILE ######################################
+//zad 12.1
+
+
+    var pass, passCorrect="pomelo";
+
+    do { pass = prompt("Podaj haslo");
+
+    }while(pass!=passCorrect)     //"!=" rózne
+    document.write("haslo poprawne");
 
     </script>
 
