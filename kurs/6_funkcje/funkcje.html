@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Funkcje</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function witaj(imie){
+    document.write('Witaj ' + imie);
+    }
+
+    function poleKwadratu(a){
+        var pole = a * a;
+        document.write("Pole kwadratu wynosi: " + pole.toFixed(2));
+    }
+
+    function poleProstokata(a,b){
+        var pole = a * b;
+        return pole;
+    }
+
+    function poleObjetosc(szerokosc, dlugosc, wysokosc){
+        var pole = szerokosc * dlugosc;
+        var objetosc = pole * wysokosc;
+        var wynik = [pole, objetosc];
+        return wynik;
+
+    }
+
+    </script>
+</head>
+
+<body>
+    <div id="poleProstokata"></div>
+    <script src="funkcje.js"></script>
+
+</body>
+</html>
