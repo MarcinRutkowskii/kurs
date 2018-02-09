@@ -40,9 +40,25 @@ function zamienImie(){
     elKomunikat.innerHTML = '<br>Twoje imie: ' + poprawneImie + '<br>Twoje nazwisko: ' + poprawneNazwisko;
     elKomunikat.style.color = 'red';
 
-
-
-
-
 }
 elPrzycisk.addEventListener('click', zamienImie);
+
+function wycinanie(){
+    minimum = elSuwak.value;
+    minimum = minimum;
+    console.log(minimum);
+    nazwisko = elNazwisko.value;
+    nazwisko = nazwisko.substr(minimum,nazwisko.length);
+    elKomunikat2.innerHTML = nazwisko;
+}
+
+elPrzycisk.addEventListener('click',zamienImie);
+elPrzycisk1.addEventListener('click',wycinanie);
+
+//###################  substr  ###########################
+
+var zdanie = "Programowanie jest super";
+var wycinanie = zdanie.substr(1,2);
+console.log(wycinanie); //ro
+var wycinanie1 = zdanie.substr(5,zdanie.length - 1);
+console.log(wycinanie1); //amowanie jest super
