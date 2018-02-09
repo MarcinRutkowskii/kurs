@@ -1,6 +1,6 @@
 body{
     background-color: bisque;
-    height: 700px;
+    height: 1500px;
     width: 1000px;
 }
 #baner{
@@ -35,7 +35,7 @@ body{
     list-style: square;
 }
 .gwiazda{
-    list-style-image: url("../jpeg/star.png");
+    list-style-image: url(../jpeg/star.png);
 }
 .puste{
     list-style: none;
@@ -47,15 +47,4 @@ a{
     margin: 15px;
     font-size: 20px;
 }
-a:link {
-    color: brown;
-}
-a:visited {
-    color: red;
-}
-a:hover{
-    color:yellow;
-}
-a:active{
-    color: black;
-}
+
