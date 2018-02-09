@@ -1,0 +1,39 @@
+body{
+    background-color: bisque;
+    height: 700px;
+    width: 1000px;
+}
+#baner{
+    height: 25%;
+    background-color: red;
+}
+#menu{
+    height: 50%;
+    width: 25%;
+    background-color: green;
+    float: left;
+}
+#tresc{
+    height: 50%;
+    width: 75%;
+    background-color: snow;
+    float: left;
+}
+#stopka{
+    height: 10%;
+    width: 100%;
+    background-color: blueviolet;
+    float: left;
+    text-align: right;
+    padding-top: 30px;
+
+}
+.okrag{
+    list-style: circle;
+}
+.kwadrat{
+    list-style: square;
+}
+.gwiazda{
+    list-style-image: url(../jpeg/star.png);
+}
