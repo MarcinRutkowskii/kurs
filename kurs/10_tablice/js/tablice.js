@@ -137,6 +137,10 @@ function dodajUzytkownika() {
     daneU[daneU.length] = [elImie.value, elNazwisko.value, elMiasto.value];
     console.log(daneU);
     console.log(daneU.length);
+    elImie.value='';
+    elNazwisko.value='';
+    elMiasto.value='';
+
 }
 function wyswietlUzytkownika() {
     var nazwisko = '';
