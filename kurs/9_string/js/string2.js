@@ -1,36 +1,57 @@
 var text = 'Kurs programowania - JS i PHP';
 console.log(text);
-console.log(text.length);  //29, rowniez spacje sie wliczaja
+console.log(text.length); //29
 
 var pierwszyZnak = text.charAt(0);
-console.log(pierwszyZnak); //K
+console.log(pierwszyZnak);  //K
 
-var ostatniZnak = text.charAt(text.length - 1);
-console.log(ostatniZnak); //P
+var ostatniZnak= text.charAt(text.length - 1);
+console.log(ostatniZnak);   //P
 
 var kod = text.charCodeAt(0);
-console.log(kod);  //75 tablica ASCII
+console.log(kod);   //75
 
-//################## zamiana na duże litery #################
+//############ zamiana na duże litery ###############
 
-var duza = text.toUpperCase();
+var duza  = text.toUpperCase();
 console.log(duza);
 
-//################ zamiana na małe litery
+//############ zamiana na małe litery ###############
 
 var mala = text.toLowerCase();
 console.log(mala);
-//zamien imie wprowadzone w formularzu na:
-//1 litera duza , pozostale litery male
+
+//zad.1 zamień imię wprowadzone w formularzu na:
+//pierwsza litera duża
+//pozostałe litery małe
 
 var elImie = document.getElementById('imie');
+var elNazwisko = document.getElementById('nazwisko');
 var elPrzycisk = document.getElementById('przycisk');
 var elKomunikat = document.getElementById('komunikat');
-var elNazwisko = document.getElementById('nazwisko');
-var imie;
+var elKomunikat1 = document.getElementById('komunikat1');
+var elSuwak = document.getElementById('suwak');
+var elPrzycisk1 = document.getElementById('przycisk1');
+var elKomunikat2 = document.getElementById('komunikat2');
+var elPozycja = document.getElementById('pozycja');
+var elKolor = document.getElementById('kolor');
+
+var imie, nazwisko, minimum;
 var poprawneImie;
-var nazwisko;
 var poprawneNazwisko;
+var dlugoscNazwiska, pozycja, kolor;
+
+
+function zamienImie(){
+    imie = elImie.value;
+    nazwisko = elNazwisko.value;
+    poprawneImie = imie.charAt(0).toUpperCase() + imie.slice(1).toLowerCase();
+    poprawneNazwisko = nazwisko.charAt(0).toUpperCase() + nazwisko.slice(1).toLowerCase();
+    elKomunikat.innerHTML = "Twoje imię: " + poprawneImie;
+    elKomunikat1.innerHTML = "Twoje nazwisko: " + poprawneNazwisko;
+    elKomunikat.style.color = "aqua";
+    elKomunikat1.style.color = "brown";
+}
 
 function wycinanie(){
     minimum = elSuwak.value;
@@ -61,13 +82,18 @@ function blokuj(){
         elSuwak.max = elNazwisko.value.length;
         elKomunikat2.innerHTML = elNazwisko.value;
     }
-
     else{
         elSuwak.disabled = false;
         elSuwak.max = elNazwisko.value.length;
-        elSuwak.value = elNazwisko.value.length;
         elKomunikat2.innerHTML = elNazwisko.value;
     }
+}
+
+function zmienKolor(){
+    kolor = elKolor.value;
+    //console.log(kolor)
+    elKomunikat2.style.color = kolor;
+
 
 }
 
@@ -75,11 +101,11 @@ elSuwak.disabled = true;
 elSuwak.value = "0";
 elPozycja.innerHTML     = "Pozycja suwaka: " + elSuwak.value;
 
-
 elSuwak.addEventListener('change',pozycja);
 elPrzycisk.addEventListener('click',zamienImie);
 elPrzycisk1.addEventListener('click',wycinanie);
 elNazwisko.addEventListener('keyup',blokuj);
+elKolor.addEventListener('change',zmienKolor);
 
 //###################  substr  ###########################
 
