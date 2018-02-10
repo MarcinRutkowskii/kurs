@@ -78,18 +78,98 @@ console.log(prawidloweSortLiczby);
 
 var dane = [];
 dane[0] = ['Jan', 'Nowak', 'Poznań'];
-dane[1] = ['Anna', 'Nowak', 'Gniezno'];
+dane[1] = ['Anna', 'Nowak', 'Gniezno', 'Polska'];
 dane[2] = ['Paweł', 'Kowal', 'Poznań'];
 
 console.log(dane[1][2]); //Gniezno
 //pierwszy for wiersze drugi wartosci
-for (var i=0; i<=2; i++){
+//for (var i=0; i<=dane.length; i++){
+//
+//    for (var j=0; j<dane[i].length; j++){
+//    document.write(dane[i][j])
+//    };
+//    document.write("<br>");
+//};
 
-    for (var j=0; j<=2; j++){
-    document.write(dane[i][j])
-    };
-    document.write("<br>");
-};
+console.clear();
+
+var elKolor = document.getElementById('kolor');
+elKolor.focus();
+var elPrzycisk = document.getElementById('przycisk');
+var elWyswietl = document.getElementById('wyswietl');
+var elWynik = document.getElementById('wynik');
+var tabKolory = []; //tablica
+//var z = ''; zmienna globalna - duplikowala wartosci
+
+function dodajKolor() {
+    if(elKolor.value.length != 0){
+    tabKolory.push(elKolor.value);
+    console.log(tabKolory);
+    elKolor.value = '';
+    elKolor.focus();
+//    wynik.innerHTML = tabKolory;
+    }
+}
+function wyswietlKolory() {
+    var z = ''; // zmienna lokalna
+    for (var i=0; i<tabKolory.length; i++){
+       z+="<li>" + tabKolory[i] + "</li>";
+    }
+    elWynik.innerHTML = z;
+}
+elPrzycisk.addEventListener('click',dodajKolor);
+elWyswietl.addEventListener('click',wyswietlKolory);
+
+//#####################
+
+var elImie = document.getElementById('imie');
+elImie.focus();
+var elNazwisko = document.getElementById('nazwisko');
+var elMiasto = document.getElementById('miasto');
+var elDodajU = document.getElementById('dodajU');
+var elWyswietlU = document.getElementById('wyswietlU');
+var elDivU = document.getElementById('divU');
+var elPrzyciskWybor = document.getElementById('przyciskWybor');
+var elDivWybor = document.getElementById('divWybor');
+var daneU = [];
+
+function dodajUzytkownika() {
+    daneU[daneU.length] = [elImie.value, elNazwisko.value, elMiasto.value];
+    console.log(daneU);
+    console.log(daneU.length);
+}
+function wyswietlUzytkownika() {
+    var nazwisko = '';
+    for(var i=0; i < daneU.length; i++){
+        nazwisko += daneU [i][1] + '<br>';
+
+    }
+     elDivU.innerHTML = nazwisko;
+}
+
+
+function wyswietlUzytkownika1() {
+    var nazwisko = '';
+    for(var i=0; i < daneU.length; i++){
+       nazwisko += daneU [i][1] + '<input type="radio" name="wybor" value="'+ i + '">' + '<br>';
+    }
+        elDivU.innerHTML = '<form name="form1">' + nazwisko + '</form>';
+        //elDivU.innerHTML = nazwisko;
+}
+
+function wyborU(){
+    var id, komunikat;
+    id = form1.elements['wybor'].value;
+    //console.log(id);
+    komunikat = 'Imię:' + daneU[id][0] + '<br>';
+    komunikat += 'Nazwisko:' + daneU[id][1] + '<br>';
+    komunikat += 'Miasto:' + daneU[id][2] + '<br>';
+    divWybor.innerHTML = komunikat;
+}
+
+elDodajU.addEventListener('click',dodajUzytkownika);
+elWyswietlU.addEventListener('click',wyswietlUzytkownika1);
+elPrzyciskWybor.addEventListener('click',wyborU);
 
 
 
