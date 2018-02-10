@@ -1,0 +1,6 @@
+#pierwszy{
+    list-style: square;
+}
+#ostatni{
+    list-style-image: url(../png/Soccer-Ball-icon.png);
+}
