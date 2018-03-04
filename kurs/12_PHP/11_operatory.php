@@ -90,6 +90,8 @@ $wynik = $a <= $b; //true
 $a = 2;
 $b = 10;
 $wynik = $a <=> $b;
+echo $wynik;
+echo '<br>';
 
 //-1 oznacza , ze pierwsza wartosc jest mniejsza od drugiej
 
