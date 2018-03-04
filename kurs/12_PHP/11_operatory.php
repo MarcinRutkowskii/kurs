@@ -94,6 +94,14 @@ $wynik = $a <=> $b;
 //-1 oznacza , ze pierwsza wartosc jest mniejsza od drugiej
 
 //echo getytype($c);
-echo $wynik;
+//echo $wynik;
 
+##############################################
+
+$x = null;
+$y = 'test';
+$z = 7;
+
+$wynik = $x ?? $y ?? $z; //wyswietla pierwsza wartosc jaka jest
+echo $wynik;
 ?>
