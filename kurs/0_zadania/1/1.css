@@ -1,0 +1,27 @@
+body {
+    background-color: aqua;
+}
+
+#lewy, #prawy {
+    width: 30%;
+    float: left;
+}
+
+#srodek {
+    width: 40%;
+    float: left;
+}
+
+
+#tabela, td{
+    border: solid 1px green;
+    text-align: center;
+
+}
+
+#przycisk {
+    border-style: none;
+    margin: 10px;
+    background-color: green;
+    color: white;
+}

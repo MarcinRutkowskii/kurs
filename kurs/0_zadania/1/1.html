@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Ogłoszenia</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <div id="lewy">
+        <table id="tabela">
+            <tr>
+                <td>Liczba ogłoszeń</td>
+                <td>Cena ogłoszenia</td>
+                <td>Bonus</td>
+            </tr>
+            <tr>
+                <td>1-50</td>
+                <td>2 PLN</td>
+                <td rowspan="2">Subskrypcja newslettera to upust 0,20 PLN na ogłoszenie</td>
+            </tr>
+            <tr>
+                <td>51 i więcej</td>
+                <td>1 PLN</td>
+            </tr>
+        </table>
+    </div>
+    <div id="srodek"><img id="zdjecie" src="skoczek.jpg"></div>
+    <div id="prawy">
+        <h2>Ile kosztuje ogłoszenie?</h2>
+        Podaj liczbę ogłoszeń:<br>
+        <input type="number" id="liczba"><br>
+        <input type="checkbox" id="upust">
+        Policz upust na newsletter<br>
+        <button id="przycisk">Oblicz</button>
+        <div id="koszt"></div>
+    </div>
+    <script>
+        var elPrzycisk = document.getElementById('przycisk');
+        var elLiczba = document.getElementById('liczba');
+
+        function oblicz(){
+            var elUpust = document.getElementById('upust');
+            var liczba = elLiczba.value;
+            var cena;
+            if(liczba >= 1 && liczba <= 50){
+                if(elUpust.checked == true){
+                    cena = 1.8 * liczba;
+                }else{
+                    cena = 2 * liczba;
+                }
+            }else if(liczba >= 51){
+                if(elUpust.checked == true){
+                    cena = 0.8 * liczba;
+                }else{
+                    cena = 1 * liczba;
+                }
+            }
+            //cena = cena.toFixed(2);
+            koszt.innerHTML = "Koszt ogłoszeń: " + cena + " PLN";
+        }
+        elPrzycisk.addEventListener('click',oblicz);
+    </script>
+</body>
+</html>

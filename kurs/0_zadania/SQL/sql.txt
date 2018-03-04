@@ -1,0 +1,174 @@
+ELECT * FROM `samochody`
+SELECT * FROM `zamowienia`
+SELECT zamowienia.Klient FROM zamowienia
+SELECT zamowienia.Klient FROM zamowienia
+SELECT zamowienia.Klient FROM zamowienia WHERE zamowienia.Klient like 'anna%'
+SELECT zamowienia.Klient, samochody.marka FROM zamowienia INNER JOIN samochody WHERE zamowienia.Klient like 'anna%'
+SELECT zamowienia.Klient, samochody.marka FROM zamowienia INNER JOIN samochody ON samochody.id=zamowienia.Samochody_id WHERE zamowienia.Klient like 'anna%'
+SELECT zamowienia.Klient, samochody.marka, samochody.rocznik, samochody.kolor FROM zamowienia INNER JOIN samochody ON samochody.id=zamowienia.Samochody_id WHERE zamowienia.Klient like 'anna%'
+SELECT `samochody`.`marka`, `samochody`.`model`, `zamowienia`.`Klient` FROM `samochody` LEFT JOIN `zamowienia` ON `zamowienia`.`Samochody_id` = `samochody`.`id`
+Rozszerz  Wykonaj zapytanie ponownie  Edytuj  Wyjaœnij  Profilowanie  Dodaj do zak³adek  Baza danych : komis  Czas zapytania : Podczas bie¿¹cej sesji SELECT `samochody`.`marka`, `samochody`.`model`, `zamowienia`.`Klient` FROM `samochody` INNER JOIN `zamowienia` ON `zamowienia`.`Samochody_id` = `samochody`.`id`
+SELECT `samochody`.`marka`, `samochody`.`model`, `zamowienia`.`Klient` FROM `samochody` INNER JOIN `zamowienia` ON `zamowienia`.`Samochody_id` = `samochody`.`id` WHERE klient LIKE 'anna%'
+SELECT * FROM `samochody`
+SELECT * FROM `zamowienia`
+SELECT * FROM `samochody`
+SELECT zamowienia.Klient, samochody.marka, samochody.model FROM zamowienia INNER JOIN samochody ON zamowienia.Samochody_id=samochody.id
+SELECT zamowienia.Klient, samochody.marka, samochody.model FROM zamowienia INNER JOIN samochody ON zamowienia.Samochody_id=samochody.id WHERE samochody.marka='Toyota'
+SELECT zamowienia.Klient, samochody.marka, samochody.model FROM zamowienia INNER JOIN samochody ON zamowienia.Samochody_id=samochody.id WHERE samochody.marka='Toyota' AND samochody.model='Yaris'
+SELECT * FROM `zamowienia`
+SELECT * FROM `samochody`
+SELECT * FROM `zamowienia`
+SELECT * FROM `samochody`
+SELECT * FROM `zamowienia`
+SELECT * FROM `samochody`
+SELECT * FROM `samochody`
+SELECT * FROM `zamowienia`
+SELECT * FROM `zamowienia`
+INSERT INTO `zamowienia` (`id`, `Samochody_id`, `Klient`, `telefon`, `dataZam`) VALUES ('', '5', ' \r\nAnna Kowalska', '444555666', '2018-02-25');
+SELECT * FROM `zamowienia`
+SELECT * FROM `zamowienia`
+SELECT * FROM `czytelnik`
+SELECT czytelnik.imie, czytelnik.nazwisko FROM czytelnik
+SELECT czytelnik.imie, czytelnik.nazwisko, wypozyczenie.id_czytelnik FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik
+SELECT czytelnik.imie, czytelnik.nazwisko, wypozyczenie.id_czytelnik FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik INNER JOIN ksiazka ON wypozyczenie.id_ksiazka=ksiazka.id_ksiazka
+SELECT czytelnik.imie, czytelnik.nazwisko, ksiazka.tytul FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik INNER JOIN ksiazka ON wypozyczenie.id_ksiazka=ksiazka.id_ksiazka
+SELECT c.imie, c.nazwisko, ksiazka.tytul FROM czytelnik c INNER JOIN wypozyczenie ON c.id_czytelnik=wypozyczenie.id_czytelnik INNER JOIN ksiazka ON wypozyczenie.id_ksiazka=ksiazka.id_ksiazka
+SELECT c.imie, c.nazwisko, ksiazka.tytul FROM czytelnik c INNER JOIN wypozyczenie ON c.id_czytelnik=wypozyczenie.id_czytelnik INNER JOIN ksiazka ON wypozyczenie.id_ksiazka=ksiazka.id_ksiazka
+SELECT c.imie, c.nazwisko, ksiazka.tytul FROM czytelnik c INNER JOIN wypozyczenie w ON c.id_czytelnik=w.id_czytelnik INNER JOIN ksiazka ON w.id_ksiazka=ksiazka.id_ksiazka
+
+
+
+
+SELECT zamowienia.Klient, samochody.marka, samochody.rocznik, samochody.kolor FROM zamowienia INNER JOIN samochody ON samochody.id=zamowienia.Samochody_id WHERE zamowienia.Klient like 'anna%'
+
+
+SELECT czytelnik.imie, czytelnik.nazwisko, ksiazka.tytul FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik INNER JOIN ksiazka ON wypozyczenie.id_ksiazka=ksiazka.id_ksiazka
+
+SELECT c.imie, c.nazwisko, k.tytul FROM czytelnik c INNER JOIN wypozyczenie w ON c.id_czytelnik=w.id_czytelnik INNER JOIN ksiazka k ON w.id_ksiazka=k.id_ksiazka
+
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik) >=2 ORDER BY 4 DESC
+
+
+INSERT INTO `wypozyczenie` (`id_wypozyczenie`, `data`, `id_czytelnik`, `id_ksiazka`, `status`) VALUES (NULL, CURRENT_TIMESTAMP, '9', '4', 'zarezerwowana');
+SELECT * FROM `wypozyczenie`
+SELECT czytelnik.imie, czytelnik.nazwisko, czytelnik.miasto, wypozyczenie.id_czytelnik FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik
+SELECT czytelnik.imie, czytelnik.nazwisko, czytelnik.miasto, COUNT(wypozyczenie.id_czytelnik) FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik
+SELECT czytelnik.imie, czytelnik.nazwisko, czytelnik.miasto, COUNT(wypozyczenie.id_czytelnik) AS 'iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik
+SELECT czytelnik.imie, czytelnik.nazwisko, czytelnik.miasto, COUNT(wypozyczenie.id_czytelnik) AS 'iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik) >=2
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik) >=2
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik) >=2
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik) >=2 ORDER BY 'Iloœæ wypo¿yczeñ'
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik) >=2 ORDER BY 'Iloœæ wypo¿yczeñ' DESC
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik) >=2 ORDER BY 4
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik) >=2 ORDER BY 4 DESC
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik)>=2
+SELECT czytelnik.imie AS Imiê, czytelnik.nazwisko AS Nazwisko, czytelnik.miasto AS Czytelnik, COUNT(wypozyczenie.id_czytelnik) AS 'Iloœæ wypo¿yczeñ' FROM czytelnik INNER JOIN wypozyczenie ON czytelnik.id_czytelnik=wypozyczenie.id_czytelnik GROUP BY wypozyczenie.id_czytelnik HAVING COUNT(wypozyczenie.id_czytelnik)>=2 ORDER BY 4 DESC
+CREATE DATABASE monika
+CREATE DATABASE xyz
+DROP DATABASE xyz
+CREATE TABLE uzytkownik ( id_uzytkownika int, imie varchar(50), nazwisko varchar(50), miasto varchar(40), ulica varchar(50), nr varchar(10) )
+SELECT * FROM `uzytkownik`
+SELECT * FROM `uzytkownik`
+ALTER TABLE uzytkownik ADD PRIMARY KEY (id_uzytkownika)
+SELECT * FROM `uzytkownik`
+ALTER TABLE uzytkownik AUTO_INCREMENT=1
+SELECT * FROM `uzytkownik`
+INSERT INTO `uzytkownik` (`id_uzytkownika`, `imie`, `nazwisko`, `miasto`, `ulica`, `nr`) VALUES ('', 'a', 'a', 'a', 'a', 'a');
+ALTER TABLE uzytkownik CHANGE id_uzytkownika id_uzytkownika int(11) NOT NULL AUTO_INCREMENT
+Rozszerz  Wykonaj zapytanie ponownie  Edytuj  Wyjaœnij  Profilowanie  Dodaj do zak³adek Baza danych : monika  Czas zapytania : 12:57:57
+SELECT * FROM `uzytkownik`
+
+
+CREATE DATABASE monika
+CREATE DATABASE xyz
+DROP DATABASE xyz
+CREATE TABLE uzytkownik ( id_uzytkownika int, imie varchar(50), nazwisko varchar(50), miasto varchar(40), ulica varchar(50), nr varchar(10) )
+SELECT * FROM `uzytkownik`
+SELECT * FROM `uzytkownik`
+ALTER TABLE uzytkownik ADD PRIMARY KEY (id_uzytkownika)
+SELECT * FROM `uzytkownik`
+ALTER TABLE uzytkownik AUTO_INCREMENT=1
+SELECT * FROM `uzytkownik`
+INSERT INTO `uzytkownik` (`id_uzytkownika`, `imie`, `nazwisko`, `miasto`, `ulica`, `nr`) VALUES ('', 'a', 'a', 'a', 'a', 'a');
+ALTER TABLE uzytkownik CHANGE id_uzytkownika id_uzytkownika int(11) NOT NULL AUTO_INCREMENT
+SELECT * FROM `uzytkownik`
+CREATE TABLE rower ( id_roweru int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, marka varchar(30), kolor varchar(20), cena float(7,2) )
+SELECT * FROM `rower`
+CREATE TABLE sprzedaz ( id_sprzedaz int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL, id_roweru int(11), id_uzytkownika int(11), data timestamp, FOREIGN KEY (id_roweru) REFERENCES rower(id_roweru), FOREIGN KEY (id_uzytkownika) REFERENCES uzytkownik(id_uzytkownika) )
+SELECT * FROM `sprzedaz`
+SELECT * FROM `uzytkownik`
+Rozszerz  Wykonaj zapytanie ponownie  Edytuj  Wyjaœnij  Profilowanie  Dodaj do zak³adek Baza danych : monika  Czas zapytania : 13:28:32
+SELECT * FROM `sprzedaz`
+
+
+
+SELECT * FROM `rower`
+INSERT INTO `rower` (`id_roweru`, `marka`, `kolor`, `cena`) VALUES (NULL, 'bmx', 'bia³y', '1500.99');
+SELECT * FROM `rower`
+Rozszerz  Wykonaj zapytanie ponownie  Edytuj  Wyjaœnij  Profilowanie  Dodaj do zak³adek  Baza danych : monika  Czas zapytania : Podczas bie¿¹cej sesji SELECT * FROM `uzytkownik`
+SELECT * FROM `rower`
+INSERT INTO `rower` (`id_roweru`, `marka`, `kolor`, `cena`) VALUES (NULL, 'Giant', 'zielony', '2500'), (NULL, 'Bianchi', 'czarny', '35000');
+SELECT * FROM `czytelnik`
+SELECT * FROM `rower`
+SELECT * FROM `rower`
+SELECT * FROM `rower`
+SELECT * FROM `uzytkownik`
+SELECT * FROM `uzytkownik`
+SELECT * FROM `uzytkownik`
+SELECT * FROM `uzytkownik`
+INSERT INTO `uzytkownik` (`id_uzytkownika`, `imie`, `nazwisko`, `miasto`, `ulica`, `nr`) VALUES (NULL, 'Krystian', 'Banan', 'Gniezno', 'Wolnoœci', '4'), (NULL, 'Krystyna', 'Banan', 'Gniezno', 'Artyleryjska', '1c');
+SELECT * FROM `uzytkownik`
+SELECT * FROM `sprzedaz`
+INSERT INTO `sprzedaz` (`id_sprzedaz`, `id_roweru`, `id_uzytkownika`, `data`) VALUES (NULL, '3', '2', CURRENT_TIMESTAMP), (NULL, '1', '1', CURRENT_TIMESTAMP);
+SELECT * FROM `sprzedaz`
+INSERT INTO `sprzedaz` (`id_sprzedaz`, `id_roweru`, `id_uzytkownika`, `data`) VALUES (NULL, '1', '3', CURRENT_TIMESTAMP);
+SELECT * FROM `sprzedaz`
+SELECT * FROM `sprzedaz`
+SELECT * FROM `sprzedaz`
+SELECT * FROM `sprzedaz`
+SELECT * FROM `sprzedaz`
+SELECT * FROM `sprzedaz`
+SELECT * FROM `wypozyczalnia`
+INSERT INTO `wypozyczalnia` (`id_wypozyczenia`, `id_roweru`, `id_uzytkownika`, `data_wypozyczenia`, `data_zwrotu`, `dni`) VALUES (NULL, '3', '2', '2018-02-25 18:35:00', NULL, '20');
+SELECT * FROM `wypozyczalnia`
+SELECT * FROM `wypozyczalnia`
+INSERT INTO `wypozyczalnia` (`id_wypozyczenia`, `id_roweru`, `id_uzytkownika`, `data_wypozyczenia`, `data_zwrotu`, `dni`) VALUES (NULL, '1', '1', '2018-02-25 00:00:00', '2018-02-25 15:00:00', '1');
+SELECT * FROM `wypozyczalnia`
+
+
+
+SELECT * FROM `uzytkownik`
+SELECT * FROM `uzytkownik`
+GRANT SELECT (`imie`), INSERT (`nazwisko`), UPDATE (`telefon`) ON `ogloszenia1`.`uzytkownik` TO 'moderator'@'localhost';
+SELECT * FROM `ogloszenie`
+grant select, insert, update on ogloszenia1.ogloszenie to 'joanna'@'localhost'
+show GRANTS for 'joanna'@'localhost'
+show grants for 'joanna'@'localhost'
+revoke select ON ogloszenia1.ogloszenie from 'joanna'@'localhost'
+revoke select, insert, update ON ogloszenia1.ogloszenie from 'joanna'@'localhost'
+show grants for 'joanna'@'localhost'
+SELECT * FROM `uzytkownik`
+GRANT SELECT (`id`), INSERT (`imie`) ON `ogloszenia1`.`uzytkownik` TO 'moderator1'@'localhost';
+GRANT SELECT(`id`) ON ogloszenia1.ogloszenie TO 'joanna'@'localhost'
+GRANT SELECT(`tytul`), SELECT(`id`), INSERT(`id`) ON ogloszenia1.ogloszenie TO 'joanna'@'localhost'
+SELECT * FROM `ogloszenie`
+SHOW GRANTS FOR 'joanna'@'localhost'
+REVOKE select(`id`) ON ogloszenia1.ogloszenie FROM 'joanna'@'localhost'
+SHOW GRANTS FOR 'joanna'@'localhost'
+SHOW GRANTS FOR 'joanna'@'localhost'
+SHOW GRANTS FOR 'joanna'@'localhost'
+REVOKE select(`id`) ON ogloszenia1.ogloszenie FROM 'joanna'@'localhost'
+REVOKE select,insert ON ogloszenia1.ogloszenie FROM 'joanna'@'localhost'
+SHOW GRANTS FOR 'joanna'@'localhost'
+GRANT SELECT(email,imie), INSERT(imie,nazwisko) ON ogloszenia1.uzytkownik TO 'joanna'@'localhost'
+SHOW GRANTS FOR 'joanna'@'localhost'
+
+
+
+
+
+
+
+

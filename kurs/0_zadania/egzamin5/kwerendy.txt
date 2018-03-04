@@ -1,0 +1,7 @@
+zapytanie 1:  SELECT `id`, `tytul`, `tresc` FROM `ogloszenie` WHERE `kategoria`='ksi¹¿ki';
+
+zapytanie 2: SELECT uzytkownik.telefon FROM uzytkownik INNER JOIN ogloszenie ON uzytkownik.id=ogloszenie.uzytkownik_id WHERE ogloszenie.id=1;
+
+zapytanie 3: CREATE USER 'moderator'@'localhost' IDENTIFIED BY 'qwerty';
+
+zapytanie 4: GRANT DELETE,SELECT ON ogloszenia.ogloszenie TO 'moderator'@'localhost';
