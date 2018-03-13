@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zdarzenia</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Rejestracja</legend>
+        <form>
+            <div id="komunikat"></div>
+            <div id="komunikat2"></div>
+            <input type="text" id="imie" placeholder="imię" autofocus><br><br>
+            <input type="text" id="nazwisko" placeholder="nazwisko" ><br><br>
+            <input type="text" id="login" placeholder="login" ><br><br>
+            <input type="email" id="mail1" placeholder="mail" ><br><br>
+            <input type="email" id="mail2" placeholder="powtórz mail" disabled><br><br>
+            <input type="password" id="pass1" placeholder="hasło" >
+            <progress id="progress" max="99" hidden></progress>
+            <br><br>
+            <input type="password" id="pass2" placeholder="powtórz hasło" disabled><br><br>
+            <input type="date" id="data" max="2018-03-06" min="1900-01-01"> Data <urodzenia></urodzenia><br><br>
+            <input type="checkbox" id="regulamin">Akceptuję regulamin<br><br>
+        </form>
+            <button id="przycisk" disabled>Wyślij</button>
+            <button id="przycisk2">Odblokuj</button>
+    </fieldset>
+    <script src="js/12_zdarzenia.js"></script>
+</body>
+</html>
