@@ -249,7 +249,7 @@ zad2.napisz skrypt ktory bedzie wyswietlal liczbe dnw pozostalych do konca bieza
 zad3.napisz skrypt obliczajacy czas generowania strony w ktorej bedzie pętla wyswietlajaca wszystke liczby parzyste z przedizalu podanego przez uzytkownika z klawiatury
 
 zad.4 napisz sktpt obliczajacych liczbe elementow podzielnych przez 5 w tablicy y
-pisz ile ich i i
+pisz ile ich jest
 zad 5 napisz skrypt w ktorym para podaje date swojego pierwszego spotkania wyswietl ile dni sa juz razem
 
 -->
