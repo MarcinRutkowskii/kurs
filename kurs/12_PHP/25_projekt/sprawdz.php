@@ -2,12 +2,12 @@
     // " -> " odwołanie przy obiektowym programowaniu PHP
     session_start();
     if(isset($_POST['przycisk']) && !empty($_POST['login']) && !empty($_POST['pass'])){
-        include_once('./polaczenie.php');
+        include_once('./polaczenie1.php');
             if(!$polaczenie->connect_error){
                 $login = $polaczenie->real_escape_string(htmlentities($_POST['login']));
                 $pass = $polaczenie->real_escape_string(htmlentities($_POST['pass']));
                 //echo $login.' '.$pass sprawdzamy;
-                $sql = "SELECT * FROM `administracja` WHERE login='$login' AND haslo='$pass'";
+                $sql = "SELECT login, haslo, uprawnienieId, aktywny FROM `administracja` WHERE login='$login' AND haslo='$pass'";
                 //sprawdzamy czy jest dobre zapytanie
                 if($rezultat = $polaczenie->query($sql)){
                     if($rezultat->num_rows > 0){

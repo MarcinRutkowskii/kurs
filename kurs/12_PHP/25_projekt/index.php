@@ -1,5 +1,26 @@
 <?php
 session_start();
+if(isset($_SESSION['zalogowany'])){
+    switch('uprawnienia'){
+
+        case 'admin':
+        $_SESSION['uprawnienia'] = 'admin';
+        header('location: admin.php');
+        break;
+        case 'sekretariat':
+        $_SESSION['uprawnienia'] = 'sekretariat';
+        header('location: sekretariat.php');
+        break;
+        case 'uczen':
+        $_SESSION['uprawnienia'] = 'uczen';
+        header('location: uczen.php');
+        break;
+        case 'gosc':
+        $_SESSION['uprawnienia'] = 'gosc';
+        header('location: gosc.php');
+        break;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pl">
